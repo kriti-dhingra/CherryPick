@@ -10,5 +10,4 @@ public class RegLoginPageApplication {
 		SpringApplication.run(RegLoginPageApplication.class, args);
 		
 	}
-
 }
