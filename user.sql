@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 28, 2022 at 06:01 PM
+-- Generation Time: Aug 03, 2022 at 09:14 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -30,19 +30,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `user` (
   `email` varchar(30) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `user_name` varchar(30) NOT NULL
+  `user_name` varchar(30) NOT NULL,
+  `phno` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`email`, `password`, `user_name`) VALUES
-('a@gmail.com', '637-230-635-83c-83d-93e-53d-33a-530-432', '1111111111'),
-('dev@gmail.com', '736-436-83b-93d-336-93f-631-23a-831', '111111111111'),
-('ghghg@gmail.com', '534-83a-733-431-234-730-63e-63f-633', 'himsnshu'),
-('sdd@gmail.com', '736-735-330-632-732-630-83f-53d-73e', '111111111111'),
-('sssss@gmail.com', '534-230-536-236-732-731-730-33b-138', '111111111111');
+INSERT INTO `user` (`email`, `password`, `user_name`, `phno`) VALUES
+('abc@gmail.com', '576-66e-26d-361-46c-445-73e-83c-839-93b-545-747', 'ddddd', 9412111681),
+('devranihimanshu81@gmail.com', '774-56d-56a-260-36b-140-53c-135-938-436-848-242', 'Himanshu', 9412111681);
 
 --
 -- Indexes for dumped tables

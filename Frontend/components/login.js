@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput,TouchableOpacity} from 'react-native';
 import { Link } from "react-router-native";
+import { LinearGradient } from 'expo-linear-gradient';
 const login = () =>
 {
   const [email, onChangeEmail] = React.useState("");
@@ -15,18 +16,11 @@ const login = () =>
       setEmailError("*Email field cannot be empty !");
       errorflag=1;
     }
-    else if (!strongRegex.test(email)) {
-      setEmailError("*Email format is not valid !");
-      errorflag=1;
-    } 
     else{
         setEmailError("");
     }
     if(password.length==0){
       setPasswordError("*Password field cannot be empty !");
-      errorflag=1;
-    }else if (password.length < 8||password.length>=20) {
-      setPasswordError("*Password must have minimum 8 characters  and maximum 20 characters!");
       errorflag=1;
     }
     else{
@@ -60,8 +54,18 @@ const login = () =>
           },
           body: JSON.stringify(jsonData)
         })
-        const Jsonresult=result.json();
+        const Jsonresult=await result.json();
         console.log(Jsonresult);
+        if(Jsonresult.email==null){
+          setEmailError("This user id doen't exists please enter correct user email");
+        }
+        else if(Jsonresult.password==null){
+          setPasswordError("Wrong password!Please try again");
+        }
+        else{
+          setEmailError("");
+          setPasswordError("");
+        }
       }
       catch(e){
         console.log(e);
@@ -71,6 +75,12 @@ const login = () =>
 
     return (
         <View style={styles.container}>
+          <LinearGradient
+        colors={['#fa9770', '#8e24aa']}
+        start={{ x: 1, y: 1 }}
+        end={{ x: 0, y: 1 }}
+        style={styles.background}
+      />
           <Text style={styles.logo}>LOGIN/SIGN UP</Text>
           <View style={styles.inputView} >
             <TextInput  
@@ -118,7 +128,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  background: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: '100%',
+  },
   logo:{
+    zIndex:1,
     fontWeight:"bold",
     fontSize:50,
     color:"#FFFFFF",
