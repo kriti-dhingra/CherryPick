@@ -1,0 +1,17 @@
+1. Backend Spring Boot.
+	Spring Boot tutorials :- 1.https://youtu.be/sdDDuQuX2cg.
+				 2. https://code.visualstudio.com/docs/java/java-spring-boot.
+2. Front end React native and Expo.
+3. Database My SQL. :- TABLES:- users(email varchar(30), password varchar(100), user_name(30))
+4. Install XAMP server.
+5. POSTMAN for API validation.
+5. Steps to run :-
+		1. Create MAVEN project.
+		2. Paste all backend files in that maven project.
+		3. Install maven dependencies(for Visual studio go to maven at bottom left corner. Inside Maven go to lifecycle. Select clean and then install) from pom.xml.
+		4. Setup XAMP at localhost create databases and run mysql and apache from XAMP.
+		5. Run backend application from RegLoginPageApplication file(Go to RUN and build).
+		6. Goto front end folder and open APP.js.
+		7. Setup react native,react,expo and other dependencies.
+		8. Go to APP.js and run npm start in terminal.
+6. Application run successfully.
